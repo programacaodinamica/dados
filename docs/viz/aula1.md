@@ -13,7 +13,7 @@ Nesta aula de introdução ao curso **Mãos à obra: Visualização de Dados com
 
 !!! info Apoie este material
 
-    O curso completo está disponível para os membros do canal Programação Dinâmica no nível Superfã ou Capuccino. Se você gosta do nosso trabalho e acha relevante a existência de materiais como este, considere nos [apoiar se tornando membro do canal(https://www.youtube.com/programacaodinamica/join)].
+    O curso completo está disponível para os membros do canal Programação Dinâmica no nível Superfã ou Capuccino. Se você gosta do nosso trabalho e acha relevante a existência de materiais como este, considere nos apoiar se tornando membro do canal.
 
 
 ----

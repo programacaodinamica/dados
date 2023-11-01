@@ -4,6 +4,10 @@ theme:
   logo: assets/logo.png
   features:
     - navigation.tabs
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
 nav:
   # - Início: index.md
   - 📊 Visualização de Dados:
