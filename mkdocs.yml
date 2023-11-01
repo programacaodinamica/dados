@@ -9,6 +9,6 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
 nav:
-  # - Início: index.md
+  - Início: index.md
   - 📊 Visualização de Dados:
     - viz/aula1.md
