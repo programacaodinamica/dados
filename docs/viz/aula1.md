@@ -1,3 +1,6 @@
+---
+title: 1. Por que aprender?
+---
 # 1. Por que aprender a construir visualizações de dados é importante?
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QGhDlGTLcSU?si=sCPrqzXidLYD1iJz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

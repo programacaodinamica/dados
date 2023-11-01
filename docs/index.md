@@ -1,4 +1,4 @@
-# Aprenda Ciência de Dados com a gente!
+## Aprenda Ciência de Dados com a gente!
 
 Explore os diferentes cursos usando as abas superiores.
 
