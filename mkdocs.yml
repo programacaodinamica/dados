@@ -1,0 +1,11 @@
+site_name: Ciência de Dados com Programação Dinâmica
+theme:
+  name: material
+  logo: assets/logo.png
+  features:
+    - navigation.tabs
+nav:
+  # - Início: index.md
+  - 📊 Visualização de Dados:
+    - viz/aula1.md
+    - viz/aula2.md
