@@ -1,0 +1,548 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="../aula2/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+    
+    
+      
+        <title>1. Por que aprender a construir visualizações de dados é importante? - Ciência de Dados com Programação Dinâmica</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-por-que-aprender-a-construir-visualizacoes-de-dados-e-importante" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Ciência de Dados com Programação Dinâmica" class="md-header__button md-logo" aria-label="Ciência de Dados com Programação Dinâmica" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ciência de Dados com Programação Dinâmica
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. Por que aprender a construir visualizações de dados é importante?
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  📊 Visualização de Dados
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Ciência de Dados com Programação Dinâmica" class="md-nav__button md-logo" aria-label="Ciência de Dados com Programação Dinâmica" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Ciência de Dados com Programação Dinâmica
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    📊 Visualização de Dados
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            📊 Visualização de Dados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    1. Por que aprender a construir visualizações de dados é importante?
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    1. Por que aprender a construir visualizações de dados é importante?
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sobre-esta-aula" class="md-nav__link">
+    Sobre esta aula
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conteudo-da-aula" class="md-nav__link">
+    Conteúdo da aula
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leituras-recomendadas" class="md-nav__link">
+    Leituras Recomendadas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confira-abaixo-o-mapa-mental-do-curso-e-descubra-o-que-iremos-aprender" class="md-nav__link">
+    Confira abaixo o mapa mental do curso e descubra o que iremos aprender:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aula2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aula 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sobre-esta-aula" class="md-nav__link">
+    Sobre esta aula
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conteudo-da-aula" class="md-nav__link">
+    Conteúdo da aula
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leituras-recomendadas" class="md-nav__link">
+    Leituras Recomendadas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confira-abaixo-o-mapa-mental-do-curso-e-descubra-o-que-iremos-aprender" class="md-nav__link">
+    Confira abaixo o mapa mental do curso e descubra o que iremos aprender:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="1-por-que-aprender-a-construir-visualizacoes-de-dados-e-importante">1. Por que aprender a construir visualizações de dados é importante?</h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QGhDlGTLcSU?si=sCPrqzXidLYD1iJz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<h3 id="sobre-esta-aula">Sobre esta aula</h3>
+<p>Nesta aula de introdução ao curso <strong>Mãos à obra: Visualização de Dados com Python</strong>, você irá entender a importância de aprender a construir uma visualização de dados, aprender o que é uma visualização de dados e analisar dois exemplos muito interessantes e bastante distintos de visualizações de dados.</p>
+<ul>
+<li>0:00 Metodologia do Curso</li>
+<li>0:38 O que é uma Visualização de Dados?</li>
+<li>1:45 Exemplo 1: Better Life Index</li>
+<li>3:41 Exemplo 2: Wind Map </li>
+</ul>
+<div class="admonition info apoie este material">
+<p class="admonition-title">Info</p>
+<p>O curso completo está disponível para os membros do canal Programação Dinâmica no nível Superfã ou Capuccino. Se você gosta do nosso trabalho e acha relevante a existência de materiais como este, considere nos apoiar se tornando membro do canal.</p>
+</div>
+<hr />
+<h3 id="conteudo-da-aula">Conteúdo da aula</h3>
+<p><span style="color:rgb(0, 0, 0)" rel="color: rgb(0, 0, 0);" data-verified="redactor" data-redactor-tag="span" data-redactor-style="color: rgb(0, 0, 0);">Olá, aqui começa nossa jornada – eu, você e a visualização de dados – e estou bastante feliz por isso. Espero que você também esteja animado(a) para essa experiência.</span>
+</p>
+<blockquote><span style="color:rgb(0, 0, 0)" rel="color: rgb(0, 0, 0);" data-verified="redactor" data-redactor-tag="span" data-redactor-style="color: rgb(0, 0, 0);">Nosso ponto de partida é uma reflexão: <em data-redactor-tag="em">"Por que e para que vamos aprender a construir uma visualização de dados?"</em></span>
+</blockquote>
+<p><span style="color:rgb(0, 0, 0)" rel="color: rgb(0, 0, 0);" data-verified="redactor" data-redactor-tag="span" data-redactor-style="color: rgb(0, 0, 0);">Em primeiro lugar, se você chegou até esse curso, posso supor que você compreende em alguma medida a importância de lidar com dados. Fato é que, no momento que estou escrevendo esse curso, se fala muito mais sobre dados do que quando eu ainda estava na faculdade. Já ouvi repetidas vezes a frase "Os dados são o novo petróleo" que é atribuída a Clive Humby ("<em data-redactor-tag="em">Data is the new oil</em>") e supostamente foi dita pela primeira vez em 2006. Os anos se passaram e essa expressão ganha cada vez mais força.</span>
+</p>
+<p><span style="color:rgb(0, 0, 0)" rel="color: rgb(0, 0, 0);" data-verified="redactor" data-redactor-tag="span" data-redactor-style="color: rgb(0, 0, 0);">Se ignorarmos o tom sensacionalista da frase e percebermos que os dados são o insumo para algoritmos que influenciam a tomada de decisão e comportamento das pessoas ao redor de todo o mundo, é possível chegarmos à conclusão de que, independentemente de dados serem ou não um "novo petróleo", eles são relevantes nos mais variados contextos sociais e, certamente, representam um ativo com valor socioeconômico em nossa sociedade atual.<br/></span>
+</p>
+<p><span style="color:rgb(0, 0, 0)" rel="color: rgb(0, 0, 0);" data-verified="redactor" data-redactor-tag="span" data-redactor-style="color: rgb(0, 0, 0);">E se os dados, por si, são um ativo, as informações que podem ser extraídas desses dados, são ainda mais valiosas. Atualmente, qualquer profissional que desenvolva a habilidade de extrair informações de grandes volumes de dados se diferencia no mercado de trabalho em todos os nichos de atuação. No entanto, não basta extrair informações de dados e não saber interpretar e comunicar essas informações obtidas; nesse sentido, aprender a construir uma visualização de dados é imprescíndivel.</span>
+</p>
+<p><span style="color:rgb(0, 0, 0)" rel="color: rgb(0, 0, 0);" data-verified="redactor" data-redactor-tag="span" data-redactor-style="color: rgb(0, 0, 0);"><span style="background-color:rgb(255, 255, 0)" rel="background-color: rgb(255, 255, 0);" data-verified="redactor" data-redactor-tag="span" data-redactor-style="background-color: rgb(255, 255, 0);"><strong data-redactor-tag="strong">Mas, afinal de contas o que precisamente é uma visualização de dados?</strong></span></span>
+</p>
+<blockquote><span style="color:rgb(0, 0, 0)" rel="color: rgb(0, 0, 0);" data-verified="redactor" data-redactor-tag="span" data-redactor-style="color: rgb(0, 0, 0);">Segundo Andy Kirk, uma visualização de dados é <em data-redactor-tag="em">a <strong data-redactor-tag="strong">representação visual e a apresentação de dados para facilitar o entendimento.</strong><br/></em></span>
+</blockquote>
+<p><span style="color:rgb(0, 0, 0)" rel="color: rgb(0, 0, 0);" data-verified="redactor" data-redactor-tag="span" data-redactor-style="color: rgb(0, 0, 0);">Nesse curso, iremos aprender e discutir a representação visual e apresentação de dados aplicadas a um problema prático e concreto. Nossa intenção é compreender o referencial teórico e dominar ferramentas práticas que permitam que alcancemos um objetivo.</span>
+</p>
+<blockquote><em data-redactor-tag="em"><span style="color:rgb(0, 0, 0)" rel="color: rgb(0, 0, 0);" data-verified="redactor" data-redactor-tag="span" data-redactor-style="color: rgb(0, 0, 0);">O maior valor de uma imagem se dá quando ela nos força a perceber algo que nunca esperaríamos ver. (Tukey, J W)</span></em>
+</blockquote>
+<p><span style="color:rgb(0, 0, 0)" rel="color: rgb(0, 0, 0);" data-verified="redactor" data-redactor-tag="span" data-redactor-style="color: rgb(0, 0, 0);">Quando nos propomos a construir uma visualização de dados procuramos por novas possibilidades de ver os dados, observamos padrões e exceções e investigamos histórias que podem estar escondidas atrás dos dados brutos. Um exemplo clássico que ilustra o impacto de uma visualização de dados é o <a href="https://pt.wikipedia.org/wiki/Quarteto_de_Anscombe">"Quarteto de Anscombe"</a> criado pelo estatístico Francis Anscombe em 1970. Ele desenvolveu um experimento utilizando quatro conjuntos de dados que possuíam aproximadamente as mesmas medidas estatísticas descritivas: média, variância e correlação.</span>
+</p>
+<p><span style="color:rgb(0, 0, 0)" rel="color: rgb(0, 0, 0);" data-verified="redactor" data-redactor-tag="span" data-redactor-style="color: rgb(0, 0, 0);"><br/></span><img src="https://assets.memberkit.com.br/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOGFQQXc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--55f06962cfdccb049639e1377a682de828a23976/Captura%20de%20Tela%202020-06-27%20a%CC%80s%2021.02.34.png" alt data-verified="redactor"/><span style="color:rgb(0, 0, 0)" rel="color: rgb(0, 0, 0);" data-verified="redactor" data-redactor-tag="span" data-redactor-style="color: rgb(0, 0, 0);"><br/></span>
+</p>
+<p><img src="https://assets.memberkit.com.br/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOENQQXc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--bb24d626b253c81af7aaeea3e1731c02f5660366/Captura%20de%20Tela%202020-06-27%20a%CC%80s%2020.50.21.png" alt="Fonte: wikipedia" data-verified="redactor"/><span style="color:rgb(0, 0, 0)" rel="color: rgb(0, 0, 0);" data-verified="redactor" data-redactor-tag="span" data-redactor-style="color: rgb(0, 0, 0);"> </span><img src="https://assets.memberkit.com.br/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOEdQQXc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--083cd603929d555e354b43c84cb39207703af970/Captura%20de%20Tela%202020-06-27%20a%CC%80s%2020.50.14.png" alt="Fonte: wikipedia" data-verified="redactor"/><span style="color:rgb(0, 0, 0)" rel="color: rgb(0, 0, 0);" data-verified="redactor" data-redactor-tag="span" data-redactor-style="color: rgb(0, 0, 0);">Fonte: Wikipedia</span>
+</p>
+<p><span style="color:rgb(0, 0, 0)" rel="color: rgb(0, 0, 0);" data-verified="redactor" data-redactor-tag="span" data-redactor-style="color: rgb(0, 0, 0);">A tabela mostra as medidas descritivas praticamente idênticas, no entanto quando observamos os gráficos fica nítido que existem diferenças nos padrões dos dados.</span>
+</p>
+<p><span style="color:rgb(0, 0, 0)" rel="color: rgb(0, 0, 0);" data-verified="redactor" data-redactor-tag="span" data-redactor-style="color: rgb(0, 0, 0);">E o que aprenderemos nesse curso?</span>
+</p>
+<p><span style="color:rgb(0, 0, 0)" rel="color: rgb(0, 0, 0);" data-verified="redactor" data-redactor-tag="span" data-redactor-style="color: rgb(0, 0, 0);">Aplicaremos a metodologia proposta por Andy Kirk com um direcionamento para a construção de uma visualização de dados. Juntos, exploraremos cada etapa, a fim de construir o conhecimento almejado. Eu elaborei um mapa mental (recurso que gosto muito e recomendo) para nos guiar nesse processo, confira abaixo.<br/></span>
+</p>
+<p><span style="color:rgb(0, 0, 0)" rel="color: rgb(0, 0, 0);" data-verified="redactor" data-redactor-tag="span" data-redactor-style="color: rgb(0, 0, 0);"></span>
+</p>
+
+<h3 id="leituras-recomendadas">Leituras Recomendadas</h3>
+<ol>
+<li><a href="https://pt.wikipedia.org/wiki/Quarteto_de_Anscombe">Quarteto de Anscombe - Wikipedia</a></li>
+<li><a href="https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/data-visualization-for-human-perception#:~:text=Data%20visualization%20is%20effective%20because,is%20extremely%20fast%20and%20efficient.">Data Visualization for Human Perception</a></li>
+<li>
+<p>Capítulo 1 - O momento Sputnik da China. <a href="https://amzn.to/3MpAMZP">Inteligência Artificial. Kai-Fu Lee</a>.</p>
+</li>
+<li>
+<p>Chapter 2 - The Design Visualization Process. A Handbook for Data Driven Design. Andy Kirk.</p>
+</li>
+</ol>
+<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=hallpaz-20&language=pt_BR&marketplace=amazon&region=BR&placement=1473912148&asins=1473912148&linkId=deb37b81497c145c3e8e86c388c25679&show_border=true&link_opens_in_new_window=true"></iframe>
+
+<h3 id="confira-abaixo-o-mapa-mental-do-curso-e-descubra-o-que-iremos-aprender">Confira abaixo o mapa mental do curso e descubra o que iremos aprender:</h3>
+<iframe src="https://www.mindmeister.com/maps/public_map_shell/1548595849/metodologia-de-visualiza-o-de-dados-por-andy-kirk?width=1200&amp;height=800&amp;z=auto" style="color:rgb(18, 38, 63);font-family:&quot;Cerebri Sans&quot;, sans-serif;font-size:15px" width="1200" height="400">
+</iframe>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+    
+  </body>
+</html>
