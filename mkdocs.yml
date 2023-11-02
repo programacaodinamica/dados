@@ -2,6 +2,21 @@ site_name: Ciência de Dados com Programação Dinâmica
 theme:
   name: material
   logo: assets/logo.png
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: teal
+      accent: indigo
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: teal
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   features:
     - navigation.tabs
 markdown_extensions:
@@ -9,6 +24,14 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
 nav:
-  - 💻 Início: index.md
-  - 📊 Visualização de Dados:
+  - 💻 SOBRE: index.md
+  - 📊 VISUALIZAÇÃO DE DADOS:
     - viz/aula1.md
+  - 🗄️ SQL PARA ANÁLISE DE DADOS:
+    - sql/aula0.md
+  - 🔍 ANÁLISE DE DADOS COM PYTHON:
+    - analise/aula0.md
+  - 🤖 APRENDIZADO DE MÁQUINA:
+    - ml/aula0.md
+  # - 🎓 CARREIRA:
+  #   - carreira/aula0.md
