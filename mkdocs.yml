@@ -31,6 +31,7 @@ nav:
   - 💻 SOBRE: index.md
   - 📊 VISUALIZAÇÃO DE DADOS:
     - viz/aula1.md
+    - viz/aula2.md
   - 🗄️ SQL PARA ANÁLISE DE DADOS:
     - sql/aula0.md
   - 🔍 ANÁLISE DE DADOS COM PYTHON:

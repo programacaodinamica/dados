@@ -20,7 +20,7 @@ Nesta aula de introdução ao curso **Mãos à obra: Visualização de Dados com
 
 
 ----
-### Conteúdo da aula
+
 Olá, aqui começa nossa jornada – eu, você e a visualização de dados – e estou bastante feliz por isso. Espero que você também esteja animado(a) para essa experiência.</span>
 
 <blockquote>Nosso ponto de partida é uma reflexão: <em data-redactor-tag="em">"Por que e para que vamos aprender a construir uma visualização de dados?"</em>
