@@ -23,6 +23,10 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+extra:
+  analytics:
+    provider: google
+    property: G-W2W48E65T9
 nav:
   - 💻 SOBRE: index.md
   - 📊 VISUALIZAÇÃO DE DADOS:
